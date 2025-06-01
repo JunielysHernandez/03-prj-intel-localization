@@ -1,5 +1,4 @@
-
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -138,7 +137,7 @@
       <!-- Card 10: Present Day -->
       <div>
         <h2>Present Day</h2>
-        <h3>Innovating for a Sustainable Future</h3>
+        <h3>Refine the Sustainable Future</h3>
         <img src="img/present.jpg" alt="Intel Core Ultra chip - Present Day" />
         <p>
           Today, Intel continues to push the boundaries of technology and sustainability. 
@@ -152,42 +151,44 @@
 
   <!-- 3-Column Content Section -->
   <section class="three-columns">
-    <div>
-      <!-- Column 1 -->
-      <div class="col">
-        <h2>RISE Strategy</h2>
-        <p>
-          Under its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy, 
-          Intel sets ambitious 2030 goals, including driving industry-wide 
-          progress on climate action, water stewardship, and waste reduction.
-        </p>
+    <div class="container">
+      <div class="row">
+        <!-- Column 1 -->
+        <div class="col-md-4">
+          <h2>RISE Strategy</h2>
+          <p>
+            Under its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy, 
+            Intel sets ambitious 2030 goals, including driving industry-wide 
+            progress on climate action, water stewardship, and waste reduction.
+          </p>
 
-        <a href="#">Learn More</a>
+          <a href="#">Learn More</a>
 
-      </div>
-      <!-- Column 2 -->
-      <div class="col">
-        <h2>Commitment</h2>
-        <p>
-          In 2022, Intel pledged to achieve net-zero greenhouse gas emissions 
-          (Scope 1 and 2) by 2040. This commitment builds on decades of 
-          environmental initiatives and partnerships across the semiconductor 
-          industry.
-        </p>
-        <a href="#">Learn More</a>
+        </div>
+        <!-- Column 2 -->
+        <div class="col-md-4">
+          <h2>Commitment</h2>
+          <p>
+            In 2022, Intel pledged to achieve net-zero greenhouse gas emissions 
+            (Scope 1 and 2) by 2040. This commitment builds on decades of 
+            environmental initiatives and partnerships across the semiconductor 
+            industry.
+          </p>
+          <a href="#">Learn More</a>
 
-      </div>
-      <!-- Column 3 -->
-      <div class="col">
-        <h2>Water &amp; Waste</h2>
-        <p>
-          Intel conserves billions of gallons of water annually and 
-          collaborates with local communities to restore watersheds.
-          Intel also upcycles and recycles materials to reduce waste and 
-          advance a circular economy.
-        </p>
-        <a href="#">Learn More</a>
+        </div>
+        <!-- Column 3 -->
+        <div class="col-md-4">
+          <h2>Water &amp; Waste</h2>
+          <p>
+            Intel conserves billions of gallons of water annually and 
+            collaborates with local communities to restore watersheds.
+            Intel also upcycles and recycles materials to reduce waste and 
+            advance a circular economy.
+          </p>
+          <a href="#">Learn More</a>
 
+        </div>
       </div>
     </div>
   </section>
@@ -198,8 +199,12 @@
     <h3>To Stay Updated Constantly</h3>
     <div class="subscribe-box">
       <h4>Subscribe</h4>
+      <form class="subscribe-form" aria-label="Subscribe to newsletter">
+        <label for="email">Email:</label>
+        <input id="email" name="email" type="email" required aria-required="true" />
+        <button type="submit">Subscribe</button>
+      </form>
     </div>
-    <!-- Add form here -->
   </section>
 
   <!-- Footer Section -->
@@ -264,6 +269,10 @@
 
     // Draw the animation every 50 milliseconds
     setInterval(draw, 50);
+
+    if (navigator.language.startsWith('ar') || navigator.language.startsWith('he')) {
+      document.documentElement.setAttribute('dir', 'rtl');
+    }
   </script>
 </body>
 </html>
