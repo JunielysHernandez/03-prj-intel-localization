@@ -163,7 +163,7 @@
             progress on climate action, water stewardship, and waste reduction.
           </p>
 
-          <a href="#" class="btn btn-primary learn-more-btn" data-title="RISE Strategy" data-content="Full details about RISE strategy...">Learn More</a>
+          <a href="#" class="learn-more-link" data-title="RISE Strategy" data-content="Full details about RISE strategy...">Learn More</a>
 
         </div>
         <!-- Column 2 -->
@@ -175,7 +175,7 @@
             environmental initiatives and partnerships across the semiconductor 
             industry.
           </p>
-          <a href="#">Learn More</a>
+          <a href="#" class="learn-more-link" data-title="Commitment" data-content="Full details about Intel's 2040 net-zero commitment...">Learn More</a>
 
         </div>
         <!-- Column 3 -->
@@ -187,7 +187,7 @@
             Intel also upcycles and recycles materials to reduce waste and 
             advance a circular economy.
           </p>
-          <a href="#">Learn More</a>
+          <a href="#" class="learn-more-link" data-title="Water &amp; Waste" data-content="Full details about Intel's water conservation and waste reduction...">Learn More</a>
 
         </div>
       </div>
@@ -205,6 +205,7 @@
         <input id="email" name="email" type="email" required aria-required="true" />
         <button type="submit">Subscribe</button>
       </form>
+      <div id="subscribe-message" style="display:none; text-align:center; color:#00eaff; margin-top:16px;"></div>
     </div>
   </section>
 
@@ -311,6 +312,13 @@
         const modal = new bootstrap.Modal(document.getElementById('learnMoreModal'));
         modal.show();
       });
+    });
+
+    document.querySelector('.subscribe-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('subscribe-message').textContent = "Thank you for subscribing!";
+      document.getElementById('subscribe-message').style.display = "block";
+      this.reset();
     });
   </script>
 </body>

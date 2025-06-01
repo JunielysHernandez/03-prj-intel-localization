@@ -162,9 +162,21 @@ section h2 {
 
 section h3 {
   margin: 0 0 8px 0;
-  font-size: 0.95em; /* Smaller than before */
+  font-size: 1em; /* Smaller than before */
   color: #7fd7ff;
   text-align: center;
+}
+
+/* Make h2 and h3 closer in the subscription form */
+.subscribe-box ~ h2,
+.subscribe-box ~ h3,
+section .subscribe-box ~ h2,
+section .subscribe-box ~ h3 {
+  margin-top: 0;
+}
+
+section > h2 + h3 {
+  margin-top: -40px; /* Adjust as needed */
 }
 
 /* Make all timeline card images the same size and fit the card */
@@ -366,4 +378,25 @@ section:nth-of-type(3) {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+section > h2,
+section > h3 {
+  position: relative;
+  z-index: 10;
+}
+
+.learn-more-link {
+  text-decoration: underline;
+  color: #007bff; /* or any color you like */
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.learn-more-link:hover {
+  color: #7c83f7; /* light indigo */
+  text-decoration: none;
 }
