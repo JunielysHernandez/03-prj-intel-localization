@@ -163,7 +163,7 @@
             progress on climate action, water stewardship, and waste reduction.
           </p>
 
-          <a href="#">Learn More</a>
+          <a href="#" class="btn btn-primary learn-more-btn" data-title="RISE Strategy" data-content="Full details about RISE strategy...">Learn More</a>
 
         </div>
         <!-- Column 2 -->
@@ -271,9 +271,47 @@
     // Draw the animation every 50 milliseconds
     setInterval(draw, 50);
 
-    if (navigator.language.startsWith('ar') || navigator.language.startsWith('he')) {
-      document.documentElement.setAttribute('dir', 'rtl');
+    function setDirectionByLanguage() {
+      const lang = navigator.language || navigator.userLanguage;
+      if (lang.startsWith('ar') || lang.startsWith('he')) {
+        document.documentElement.setAttribute('dir', 'rtl');
+      } else {
+        document.documentElement.setAttribute('dir', 'ltr');
+      }
     }
+
+    // Initial check
+    setDirectionByLanguage();
+
+    // Listen for language changes (if browser supports it)
+    window.addEventListener('languagechange', setDirectionByLanguage);
+  </script>
+
+  <!-- Bootstrap Modal -->
+  <div class="modal fade" id="learnMoreModal" tabindex="-1" aria-labelledby="learnMoreModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-header">
+          <h5 class="modal-title" id="learnMoreModalLabel">More Information</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="learnMoreModalBody">
+          <!-- Content will be injected here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.learn-more-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('learnMoreModalLabel').textContent = this.getAttribute('data-title');
+        document.getElementById('learnMoreModalBody').textContent = this.getAttribute('data-content');
+        const modal = new bootstrap.Modal(document.getElementById('learnMoreModal'));
+        modal.show();
+      });
+    });
   </script>
 </body>
 </html>
